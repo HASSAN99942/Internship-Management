@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 262 83% 58%; /* violet */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 262 60% 96%;
+    --accent-foreground: 262 83% 40%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 262 83% 58%;
+    --radius: 0.75rem;
+
+    /* extra semantic colors (not in stock shadcn) */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 38 92% 12%;
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    /* sidebar (deep violet-black in BOTH modes) */
+    --sidebar: 257 35% 12%;
+    --sidebar-foreground: 257 15% 75%;
+    --sidebar-primary: 262 83% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 257 30% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 257 25% 20%;
+  }
+
+  .dark {
+    --background: 257 24% 8%;
+    --foreground: 210 40% 98%;
+    --card: 257 22% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 257 22% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 263 70% 65%; /* lightened violet for dark */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 257 20% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 257 20% 17%;
+    --muted-foreground: 257 12% 65%;
+    --accent: 257 25% 20%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 257 20% 20%;
+    --input: 257 20% 20%;
+    --ring: 263 70% 65%;
+
+    --success: 142 64% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 38 92% 10%;
+    --info: 199 89% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar: 257 30% 7%;
+    --sidebar-foreground: 257 12% 70%;
+    --sidebar-primary: 263 70% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 257 25% 14%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 257 22% 16%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(cd c:\\\\Users\\\\ALHASSAN\\\\Desktop\\\\internship\\\\frontend; $p = \\(Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -Unique\\); if \\($p\\) { Stop-Process -Id $p -Force -ErrorAction SilentlyContinue; Write-Output \"stopped dev server $p\" }; if \\(Test-Path .next\\) { Remove-Item -Recurse -Force .next -ErrorAction SilentlyContinue }; if \\(Test-Path node_modules\\\\.cache\\) { Remove-Item -Recurse -Force node_modules\\\\.cache -ErrorAction SilentlyContinue }; Write-Output \"cleared .next + cache\")",
+      "PowerShell(cd c:\\\\Users\\\\ALHASSAN\\\\Desktop\\\\internship\\\\frontend; $p = \\(Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -Unique\\); if \\($p\\) { foreach \\($x in $p\\) { Stop-Process -Id $x -Force -ErrorAction SilentlyContinue }; Write-Output \"stopped dev server\" } else { Write-Output \"no dev server on :3000\" }; Remove-Item -Force .dev.log -ErrorAction SilentlyContinue; Write-Output \"removed temp log\")",
+      "PowerShell(cd c:\\\\Users\\\\ALHASSAN\\\\Desktop\\\\internship\\\\frontend; Get-Process node -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue; Start-Sleep -Seconds 2; Write-Output \"node procs: $\\(\\(Get-Process node -ErrorAction SilentlyContinue | Measure-Object\\).Count\\); font cache present: $\\(Test-Path .next\\\\cache\\)\")",
+      "PowerShell(cd c:\\\\Users\\\\ALHASSAN\\\\Desktop\\\\internship\\\\backend; Write-Output \"--- system check ---\"; .\\\\venv\\\\Scripts\\\\python.exe manage.py check 2>&1 | Select-Object -Last 5; Write-Output \"--- makemigrations --check --dry-run ---\"; .\\\\venv\\\\Scripts\\\\python.exe manage.py makemigrations --check --dry-run; Write-Output \"EXITCODE=$LASTEXITCODE\")",
+      "PowerShell(Set-Location \"c:\\\\Users\\\\ALHASSAN\\\\Desktop\\\\internship\\\\backend\"; .\\\\venv\\\\Scripts\\\\python.exe manage.py spectacular --file schema.yml 2>&1 | Select-Object -Last 3; echo \"Exit: $LASTEXITCODE\"; Remove-Item schema.yml -ErrorAction SilentlyContinue)",
+      "PowerShell(cd C:\\\\Users\\\\ALHASSAN\\\\Desktop\\\\internship\\\\backend; venv\\\\Scripts\\\\Activate.ps1; python manage.py spectacular --validate --file \"$env:TEMP\\\\schema_check.yaml\" 2>&1 | Select-Object -Last 8; echo \"EXIT:$LASTEXITCODE\")"
+    ]
+  }
+}
