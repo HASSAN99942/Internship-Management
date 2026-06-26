@@ -18,7 +18,9 @@ import '../../features/messaging/screens/conversations_screen.dart';
 import '../../features/messaging/screens/thread_screen.dart';
 import '../../features/notifications/screens/notifications_screen.dart';
 import '../widgets/app_scaffold.dart';
-import '../widgets/placeholder_screen.dart';
+import '../../features/dashboard/screens/student_dashboard_screen.dart';
+import '../../features/dashboard/screens/company_dashboard_screen.dart';
+import '../../features/dashboard/screens/teacher_dashboard_screen.dart';
 
 // ---------------------------------------------------------------------------
 // Router provider — created once; GoRouter holds a reference to the notifier.
@@ -108,8 +110,7 @@ final routerProvider = Provider<GoRouter>((ref) {
           // ── Student tabs ─────────────────────────────────────────────────
           GoRoute(
             path: '/student',
-            builder: (_, _) => const PlaceholderScreen(
-                title: 'Dashboard', icon: Icons.dashboard_outlined),
+            builder: (_, _) => const StudentDashboardScreen(),
           ),
           GoRoute(
             path: '/student/offers',
@@ -131,8 +132,7 @@ final routerProvider = Provider<GoRouter>((ref) {
           // ── Company tabs ─────────────────────────────────────────────────
           GoRoute(
             path: '/company',
-            builder: (_, _) => const PlaceholderScreen(
-                title: 'Dashboard', icon: Icons.dashboard_outlined),
+            builder: (_, _) => const CompanyDashboardScreen(),
           ),
           GoRoute(
             path: '/company/offers',
@@ -158,8 +158,7 @@ final routerProvider = Provider<GoRouter>((ref) {
           // ── Teacher tabs ─────────────────────────────────────────────────
           GoRoute(
             path: '/teacher',
-            builder: (_, _) => const PlaceholderScreen(
-                title: 'Dashboard', icon: Icons.dashboard_outlined),
+            builder: (_, _) => const TeacherDashboardScreen(),
           ),
           GoRoute(
             path: '/teacher/offers',
